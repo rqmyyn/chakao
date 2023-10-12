@@ -101,7 +101,7 @@ if (!isset($_SESSION['username'])) {
                 </a>
             </div>
             <div class="dashboard-button">
-                <a href="../admin/product-add.php">
+                <a href="add-product.php">
                     <i class="fas fa-plus-circle"></i>
                     <span>เพิ่มรายการสินค้า</span>
                 </a>
