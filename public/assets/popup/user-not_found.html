@@ -1,63 +1,15 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <title>แจ้งเตือน</title>
-    <!-- เรียกใช้ Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        /* ปรับแต่งสีของไอคอน */
-        .text-warning {
-            color: #FFC107;
-            /* สีเหลืองของ Bootstrap */
-        }
-
-        /* ปรับแต่งขนาดของไอคอน */
-        .fa-exclamation-circle {
-            font-size: 3em;
-            /* ขนาด 3 เท่าของข้อความปกติ */
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">แจ้งเตือน</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body text-center">
-                    <i class="fas fa-exclamation fa-3x text-warning"></i>
-                    <h3>ไม่พบข้อมูลของคุณในระบบ</h3>
-                    <p style="font-weight: lighter; color: red;">กรุณาตรวจสอบเบอร์โทรและรหัสผ่านอีกครั้ง</p>
-                </div>
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- เรียกใช้ Bootstrap JS และ jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- เรียกใช้ JavaScript เพื่อแสดง Modal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
     <script>
-        $(document).ready(function() {
-            // แสดง Modal เมื่อหน้าโหลดเสร็จ
-            $("#myModal").modal("show");
-        });
+      Swal.fire({
+  title: 'ไม่พบข้อมูลสมาชิก!',
+  text: 'กรุณาตรวจสอบเบอร์โทรและรหัสผ่านอีกครั้ง',
+  icon: 'error',
+  showConfirmButton: false,
+  timer: 2000
+})
     </script>
-</body>
-
-</html>
+  </body>
+  

@@ -1,47 +1,14 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <title>แจ้งเตือน</title>
-    <!-- เรียกใช้ Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">แจ้งเตือน</h4>
-
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body text-center">
-                <i class="fas fa-check-circle fa-3x text-success"></i>
-                    <p style="margin-top: 10px;">สมัครสมาชิกสำเร็จ</p>
-                </div>
-                <!-- Modal Footer -->
-
-            </div>
-        </div>
-    </div>
-
-    <!-- เรียกใช้ Bootstrap JS และ jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- เรียกใช้ JavaScript เพื่อแสดง Modal และปิดอัตโนมัติหลังจาก 3 วินาที -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
     <script>
-        $(document).ready(function () {
-            // แสดง Modal เมื่อหน้าโหลดเสร็จ
-            $("#myModal").modal("show");
-            
-            // หลังจากแสดง Modal ให้ใช้ setTimeout เพื่อปิด Modal หลังจาก 3 วินาที
-            setTimeout(function () {
-                $("#myModal").modal("hide");
-            }, 5000);
-        });
+      Swal.fire({
+  title: 'สมัครสมาชิกสำเร็จ!',
+  text: '',
+  icon: 'success',
+  showConfirmButton: false
+})
     </script>
-</body>
-</html>
+  </body>
+  
