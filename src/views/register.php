@@ -46,7 +46,7 @@ include('../controller/user-regis.php');
                     </div>
                     <div class="form-group col-md-6">
                         <label for="age">อายุ</label>
-                        <input type="text" class="form-control" id="age" name="age" readonly>
+                        <input type="number" class="form-control" id="age" name="age" readonly>
                         <script>
                             // Check if the date of birth is selected
                             document.getElementById('datebirth').addEventListener('change', function() {
@@ -114,7 +114,7 @@ include('../controller/user-regis.php');
 
                 </div>
                 <button type="submit" class="btn btn-primary">ลงทะเบียน</button>
-                <a href="../../public/index.php" class="btn btn-outline-secondary border-0 ml-1">
+                <a href="../views/login.php" class="btn btn-outline-secondary border-0 ml-1">
                     <i class="fa fa-arrow-left" style="margin-right: 5px;"></i> ย้อนกลับ
                 </a>
 

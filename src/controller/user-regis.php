@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = $_POST["first_name"];
     $last_name = $_POST["last_name"];
     $datebirth = $_POST["datebirth"];
+    $age = $POST["age"];
     $address = $_POST["address"];
     $sub_district = $_POST["sub-district"];
     $district = $_POST["district"];
@@ -23,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include('../../public/assets/popup/user-duplicate.html');
     } else {
         // เพิ่มข้อมูลลงในฐานข้อมูล
-        $sql_customer = "INSERT INTO customer (first_name, last_name, datebirth, address, sub_district, district, city, zipcode)
-    VALUES ('$first_name', '$last_name', '$datebirth', '$address', '$sub_district', '$district', '$city', '$zipcode')";
+        $sql_customer = "INSERT INTO customer (first_name, last_name, datebirth,age, address, sub_district, district, city, zipcode)
+    VALUES ('$first_name', '$last_name', '$datebirth','$age', '$address', '$sub_district', '$district', '$city', '$zipcode')";
 
         if ($conn->query($sql_customer) === TRUE) {
             $customer_id = $conn->insert_id; // รับค่า customer_id ที่รันอัตโนมัติ

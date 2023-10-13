@@ -78,7 +78,7 @@ include('../controller/user-login.php');
                             </div>
 
                             <div class="form-group">
-                                <label for="password">รหัสผ่าน:</label>
+                                <label for="password">รหัสผ่าน :</label>
                                 <input type="password" id="password" name="password" class="form-control" required />
                                 <div class="row justify-content-left" style="margin-top: 15px; margin-left: 1px;">
                                     <a href="admin_login.php">ลืมรหัสผ่าน</a>

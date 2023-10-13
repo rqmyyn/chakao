@@ -74,7 +74,7 @@ if (isset($_SESSION['username'])) {
                             <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
                         </form>
                         <div class="text-center mt-3">
-            <a href="../../public/index.php" class="btn btn-outline-secondary border-0 ml-1">
+            <a href="../../index.php" class="btn btn-outline-secondary border-0 ml-1">
                 <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>กลับสู่หน้าหลัก
             </a>
                     </div>

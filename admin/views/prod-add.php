@@ -1,6 +1,6 @@
 <?php
 //ส่งฟอร์มบันทึก
-include('../controller/p-add-product.php');
+include('../controller/prod-add.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

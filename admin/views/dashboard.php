@@ -91,29 +91,29 @@ if (!isset($_SESSION['username'])) {
             <div class="dashboard-button">
                 <a href="purchase-add.php">
                     <i class="fas fa-shopping-cart"></i>
-                    <span>เพิ่มรายการขาย</span>
+                    <span>บันทึกการขาย</span>
                 </a>
             </div>
             <div class="dashboard-button">
                 <a href="purchase-list.php">
                     <i class="fas fa-book icon"></i>
-                    <span>เรียกดูรายการขายทั้งหมด</span>
+                    <span>ประวัติรายการขาย</span>
                 </a>
             </div>
             <div class="dashboard-button">
-                <a href="add-product.php">
+                <a href="prod-add.php">
                     <i class="fas fa-plus-circle"></i>
                     <span>เพิ่มรายการสินค้า</span>
                 </a>
             </div>
             <div class="dashboard-button">
-                <a href="../admin/product-list.php">
+                <a href="prod-showall.php">
                     <i class="fas fa-box"></i>
                     <span>เรียกดูรายการสินค้า</span> <!--Finished-->
                 </a>
             </div>
             <div class="dashboard-button">
-                <a href="ad_customer_showall.php">
+                <a href="member-show.php">
                     <i class="fas fa-users"></i>
                     <span>เรียกดูรายการสมาชิก</span>
                 </a>
