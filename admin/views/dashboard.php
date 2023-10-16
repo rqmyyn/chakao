@@ -1,12 +1,4 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: ../../public/index.php"); // ถ้ายังไม่ล็อกอิน ให้เปลี่ยนเส้นทางไปที่หน้าล็อกอิน
-}
-
-// นำเสนอข้อมูลของลูกค้าที่เข้าสู่ระบบตรงนี้
-?>
+<?php include('../controller/session-status.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,115 +7,53 @@ if (!isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แดชบอร์ด</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Kanit', sans-serif;
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .h1 {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .dashboard {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .dashboard-button {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            min-width: 250px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .dashboard-button:hover {
-            transform: translateY(-5px);
-        }
-
-        .dashboard-button a {
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .dashboard-button i {
-            font-size: 36px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .dashboard-button {
-                min-width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div>
-        <div class="h1">
-            <h1>ระบบจัดการร้านค้า</h1>
-        </div>
+    <!-- Navbar -->
+    <header>
+        <div id="navbar-container"></div>
+    </header>
 
-        <div class="dashboard">
-            <div class="dashboard-button">
-                <a href="purchase-add.php">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>บันทึกการขาย</span>
-                </a>
+    <div class="container">
+        <div>
+            <div class="h1">
+                <h1>ระบบจัดการร้านค้า</h1>
             </div>
-            <div class="dashboard-button">
-                <a href="purchase-list.php">
-                    <i class="fas fa-book icon"></i>
-                    <span>ประวัติรายการขาย</span>
-                </a>
-            </div>
-            <div class="dashboard-button">
-                <a href="prod-add.php">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>เพิ่มรายการสินค้า</span>
-                </a>
-            </div>
-            <div class="dashboard-button">
-                <a href="prod-showall.php">
-                    <i class="fas fa-box"></i>
-                    <span>เรียกดูรายการสินค้า</span> <!--Finished-->
-                </a>
-            </div>
-            <div class="dashboard-button">
-                <a href="member-show.php">
-                    <i class="fas fa-users"></i>
-                    <span>เรียกดูรายการสมาชิก</span>
-                </a>
+
+            <div class="dashboard">
+                <div class="dashboard-button">
+                    <a href="purchase-add.php">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>เพิ่มรายการขาย</span>
+                    </a>
+                </div>
+                <div class="dashboard-button">
+                    <a href="../views/sales-show.php">
+                        <i class="fas fa-book icon"></i>
+                        <span>เรียกดูรายการขายทั้งหมด</span>
+                    </a>
+                </div>
             </div>
 
         </div>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="../controller/logout.php">ออกจากระบบ</a>
-        </div>
+
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // โหลด Navbar และแสดงใน <div> ที่คุณสร้าง
+        fetch('../assets/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
 
 </body>
 

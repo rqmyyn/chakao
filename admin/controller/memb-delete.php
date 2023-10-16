@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -11,19 +12,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 
     // Check if the 'id' parameter is set in the URL
     if (isset($_GET['id'])) {
-        $product_id = mysqli_real_escape_string($conn, $_GET['id']);
+        $customer_id = mysqli_real_escape_string($conn, $_GET['id']);
 
-        // Query to delete the product with the specified id
-        $delete_query = "DELETE FROM Products WHERE product_id = $product_id";
+        $deleteMemberSql = "DELETE FROM customer_member WHERE customer_id = '$customerId'";
+        $deleteCustomerSql = "DELETE FROM customer WHERE customer_id = '$customerId'";
 
-        if (mysqli_query($conn, $delete_query)) {
-            // Product deleted successfully
+        // ทำการลบสมาชิกจากฐานข้อมูล
+        if (mysqli_query($conn, $deleteMemberSql) && mysqli_query($conn, $deleteCustomerSql) ) {
             $response = ['success' => true];
         } else {
-            // Error occurred while deleting the product
-            $response = ['success' => false, 'error' => mysqli_error($conn)];
+            $response = ['success' => false];
         }
-
         // Close the database connection
         mysqli_close($conn);
 
